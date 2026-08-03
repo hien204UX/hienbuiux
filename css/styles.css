@@ -124,11 +124,23 @@ h2 {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
 .btn--dark {
   background: var(--bg-dark);
   color: var(--text-on-dark);
+}
+
+.btn--dark:hover {
+  background-color: #322c28;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(28, 25, 23, 0.25);
+}
+
+.btn--dark:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
 .section-header {
@@ -142,6 +154,72 @@ h2 {
 
 .section-header h2 {
   margin-top: 0;
+}
+
+/* ---------- Motion ---------- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.work__grid .reveal:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.work__grid .reveal:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.work__grid .reveal:nth-child(4) {
+  transition-delay: 0.24s;
+}
+
+.skills__grid .reveal:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.skills__grid .reveal:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.skills__grid .reveal:nth-child(4) {
+  transition-delay: 0.24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero__intro .eyebrow,
+  .hero__heading,
+  .hero__side,
+  .hero__stats {
+    animation: none;
+  }
 }
 
 /* ---------- Nav ---------- */
@@ -265,6 +343,10 @@ h2 {
   max-width: 700px;
 }
 
+.hero__intro .eyebrow {
+  animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
 .hero__heading {
   font-family: var(--font-serif);
   font-weight: 400;
@@ -273,6 +355,7 @@ h2 {
   letter-spacing: -0.02em;
   color: var(--text);
   margin-top: 24px;
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .hero__heading em {
@@ -286,6 +369,7 @@ h2 {
   flex-direction: column;
   gap: 24px;
   padding-top: 8px;
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 
 .hero__paragraph {
@@ -301,6 +385,7 @@ h2 {
   margin-top: 64px;
   padding-top: 24px;
   border-top: 1px solid var(--border);
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .hero__stat-number {
