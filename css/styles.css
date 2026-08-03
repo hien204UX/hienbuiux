@@ -251,7 +251,7 @@ h2 {
 .hero__inner {
   width: 100%;
   max-width: var(--container);
-  padding: clamp(56px, 10vw, 100px) var(--gutter);
+  padding: calc(clamp(56px, 10vw, 100px) + 72px) var(--gutter) clamp(56px, 10vw, 100px);
 }
 
 .hero__top {
