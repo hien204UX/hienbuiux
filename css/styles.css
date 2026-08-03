@@ -266,6 +266,12 @@ h2 {
   color: var(--text);
 }
 
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -300,10 +306,6 @@ h2 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text);
-}
-
-.mobile-menu .btn {
-  width: fit-content;
 }
 
 @media (max-width: 860px) {
