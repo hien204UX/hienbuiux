@@ -38,6 +38,7 @@ const gateModal = document.getElementById('gateModal');
 const gateForm = document.getElementById('gateForm');
 const gateEmail = document.getElementById('gateEmail');
 const gateDenied = document.querySelector('.gate__denied');
+const gateNote = document.querySelector('.gate__note');
 const gateRequestView = gateModal.querySelector('[data-gate-view="request"]');
 const gateThanksView = gateModal.querySelector('[data-gate-view="thanks"]');
 const gateRadios = gateModal.querySelectorAll('input[name="isRecruiter"]');
@@ -47,6 +48,7 @@ function openGate(project) {
   currentProject = project || 'this case study';
   gateForm.reset();
   gateForm.hidden = false;
+  gateNote.hidden = false;
   gateDenied.hidden = true;
   gateRequestView.hidden = false;
   gateThanksView.hidden = true;
@@ -80,6 +82,7 @@ gateRadios.forEach((radio) => {
   radio.addEventListener('change', () => {
     const isRecruiter = radio.value === 'yes' && radio.checked;
     gateForm.hidden = !isRecruiter;
+    gateNote.hidden = !isRecruiter;
     gateDenied.hidden = isRecruiter;
   });
 });
