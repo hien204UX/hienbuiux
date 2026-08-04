@@ -919,6 +919,25 @@ h2 {
   justify-content: center;
 }
 
+.gate__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.gate__honeypot {
+  display: none;
+}
+
+.gate__error {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--accent);
+}
+
+.gate__error[hidden] {
+  display: none;
+}
+
 .gate__denied {
   margin-top: 20px;
   font-size: 13.5px;

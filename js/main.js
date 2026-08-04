@@ -38,6 +38,9 @@ const gateModal = document.getElementById('gateModal');
 const gateForm = document.getElementById('gateForm');
 const gateEmail = document.getElementById('gateEmail');
 const gateMessage = document.getElementById('gateMessage');
+const gateSubmit = document.getElementById('gateSubmit');
+const gateError = document.getElementById('gateError');
+const WEB3FORMS_ACCESS_KEY = 'f68c6e60-fc02-441f-9dee-0b8ed704c56b';
 const gateDenied = document.querySelector('.gate__denied');
 const gateNote = document.querySelector('.gate__note');
 const gateRequestView = gateModal.querySelector('[data-gate-view="request"]');
@@ -51,6 +54,7 @@ function openGate(project) {
   gateForm.hidden = false;
   gateNote.hidden = false;
   gateDenied.hidden = true;
+  gateError.hidden = true;
   gateRequestView.hidden = false;
   gateThanksView.hidden = true;
   gateModal.classList.add('is-open');
@@ -88,18 +92,40 @@ gateRadios.forEach((radio) => {
   });
 });
 
-gateForm.addEventListener('submit', (event) => {
+gateForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const email = gateEmail.value.trim();
   const message = gateMessage.value.trim();
   if (!email || !message) return;
 
-  gateRequestView.hidden = true;
-  gateThanksView.hidden = false;
+  gateError.hidden = true;
+  gateSubmit.disabled = true;
+  gateSubmit.textContent = 'Sending…';
 
-  const subject = `Case study access request: ${currentProject}`;
-  const body = `Recruiter email: ${email}\nCase study: ${currentProject}\n\nMessage:\n${message}`;
-  const mailLink = document.createElement('a');
-  mailLink.href = `mailto:hienbui2041995@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  mailLink.click();
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: `Case study access request: ${currentProject}`,
+        case_study: currentProject,
+        email,
+        message,
+      }),
+    });
+    const result = await response.json();
+
+    if (!result.success) {
+      throw new Error(result.message || 'Submission failed');
+    }
+
+    gateRequestView.hidden = true;
+    gateThanksView.hidden = false;
+  } catch (err) {
+    gateError.hidden = false;
+  } finally {
+    gateSubmit.disabled = false;
+    gateSubmit.textContent = 'Send email';
+  }
 });

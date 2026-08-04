@@ -365,7 +365,10 @@
           <label class="gate__label" for="gateMessage">Your message <span class="gate__required">*</span></label>
           <textarea class="gate__input gate__textarea" id="gateMessage" name="message" rows="4" required></textarea>
 
-          <button type="submit" class="btn btn--dark gate__submit">Send email</button>
+          <input type="checkbox" name="botcheck" class="gate__honeypot" tabindex="-1" autocomplete="off" />
+
+          <button type="submit" class="btn btn--dark gate__submit" id="gateSubmit">Send email</button>
+          <p class="gate__error" id="gateError" hidden>Something went wrong sending your request — please try again, or email me directly at hienbui2041995@gmail.com.</p>
         </form>
 
         <p class="gate__denied" hidden>This case study is available to recruiters only.</p>
