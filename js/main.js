@@ -37,6 +37,7 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
 const gateModal = document.getElementById('gateModal');
 const gateForm = document.getElementById('gateForm');
 const gateEmail = document.getElementById('gateEmail');
+const gateMessage = document.getElementById('gateMessage');
 const gateDenied = document.querySelector('.gate__denied');
 const gateNote = document.querySelector('.gate__note');
 const gateRequestView = gateModal.querySelector('[data-gate-view="request"]');
@@ -90,13 +91,14 @@ gateRadios.forEach((radio) => {
 gateForm.addEventListener('submit', (event) => {
   event.preventDefault();
   const email = gateEmail.value.trim();
-  if (!email) return;
+  const message = gateMessage.value.trim();
+  if (!email || !message) return;
 
   gateRequestView.hidden = true;
   gateThanksView.hidden = false;
 
   const subject = `Case study access request: ${currentProject}`;
-  const body = `Recruiter email: ${email}\nCase study: ${currentProject}`;
+  const body = `Recruiter email: ${email}\nCase study: ${currentProject}\n\nMessage:\n${message}`;
   const mailLink = document.createElement('a');
   mailLink.href = `mailto:hienbui2041995@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   mailLink.click();

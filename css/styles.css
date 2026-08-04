@@ -895,9 +895,9 @@ h2 {
 
 .gate__input {
   padding: 10px 14px;
-  border: 1px solid var(--border);
+  border: 1px solid #f1f5f9;
   border-radius: 2px;
-  background: var(--bg-card);
+  background: #e4e2df;
   font-family: var(--font-sans);
   font-size: 14px;
   color: var(--text);
@@ -905,6 +905,12 @@ h2 {
 
 .gate__input::placeholder {
   color: var(--muted);
+}
+
+.gate__textarea {
+  resize: vertical;
+  min-height: 88px;
+  line-height: 1.5;
 }
 
 .gate__submit {
