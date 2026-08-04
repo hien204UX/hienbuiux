@@ -105,7 +105,7 @@
                 <li>iOS</li>
                 <li>Design System</li>
               </ul>
-              <a href="#" class="case-study-link">
+              <a href="#" class="case-study-link" data-project="iGaming Design System">
                 Case study
                 <img src="assets/icons/arrow-case-study.svg" alt="" width="12" height="12" />
               </a>
@@ -129,7 +129,7 @@
                 <li>Figma</li>
                 <li>Automotive</li>
               </ul>
-              <a href="#" class="case-study-link">
+              <a href="#" class="case-study-link" data-project="HMI Automotive Project">
                 Case study
                 <img src="assets/icons/arrow-case-study.svg" alt="" width="12" height="12" />
               </a>
@@ -153,7 +153,7 @@
                 <li>Search &amp; Discovery</li>
                 <li>A/B Testing</li>
               </ul>
-              <a href="#" class="case-study-link">
+              <a href="#" class="case-study-link" data-project="J.AI">
                 Case study
                 <img src="assets/icons/arrow-case-study.svg" alt="" width="12" height="12" />
               </a>
@@ -177,7 +177,7 @@
                 <li>SAAS Design</li>
                 <li>Accessibility</li>
               </ul>
-              <a href="#" class="case-study-link">
+              <a href="#" class="case-study-link" data-project="The Chef's Table">
                 Case study
                 <img src="assets/icons/arrow-case-study.svg" alt="" width="12" height="12" />
               </a>
@@ -333,6 +333,49 @@
       </div>
     </section>
   </main>
+
+  <div class="gate" id="gateModal" aria-hidden="true">
+    <div class="gate__backdrop" data-gate-close></div>
+    <div class="gate__card" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+      <div class="gate__view" data-gate-view="request">
+        <div class="gate__header">
+          <h3 id="gateTitle">Are you a recruiter?</h3>
+          <button type="button" class="gate__close" aria-label="Close" data-gate-close>&times;</button>
+        </div>
+
+        <div class="gate__choice" role="radiogroup" aria-label="Are you a recruiter?">
+          <label class="gate__checkbox">
+            <input type="radio" name="isRecruiter" value="yes" checked />
+            <span class="gate__box"></span>
+            Yes
+          </label>
+          <label class="gate__checkbox">
+            <input type="radio" name="isRecruiter" value="no" />
+            <span class="gate__box"></span>
+            No
+          </label>
+        </div>
+
+        <p class="gate__note">This project is protected by a non-disclosure agreement (NDA), so I'm unable to showcase it publicly. Please contact me for more details.</p>
+
+        <form class="gate__form" id="gateForm">
+          <label class="gate__label" for="gateEmail">Input your email <span class="gate__required">*</span></label>
+          <input class="gate__input" type="email" id="gateEmail" name="email" placeholder="***@***.com" required />
+          <button type="submit" class="btn btn--dark gate__submit">Send email</button>
+        </form>
+
+        <p class="gate__denied" hidden>This case study is available to recruiters only.</p>
+      </div>
+
+      <div class="gate__view" data-gate-view="thanks" hidden>
+        <div class="gate__header">
+          <h3>Thank you!</h3>
+          <button type="button" class="gate__close" aria-label="Close" data-gate-close>&times;</button>
+        </div>
+        <p>I've received your request. If you're eligible to view this case study, I'll reach out with the details soon.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
