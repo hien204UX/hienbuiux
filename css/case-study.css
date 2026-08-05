@@ -35,6 +35,15 @@
   max-width: 720px;
 }
 
+.cs-body--strong {
+  color: var(--muted-strong);
+  font-size: 18px;
+}
+
+.cs-body--muted {
+  color: var(--muted);
+}
+
 .cs-body strong {
   font-weight: 500;
   color: var(--text);
@@ -79,6 +88,19 @@
   border-radius: 8px;
   object-fit: cover;
   aspect-ratio: 1130 / 550;
+}
+
+.cs-cover--dim {
+  position: relative;
+}
+
+.cs-cover--dim::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 64px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  pointer-events: none;
 }
 
 /* ---------- Overview meta ---------- */
@@ -138,6 +160,97 @@
     flex: none;
     max-width: none;
   }
+}
+
+.cs-challenge--text-only {
+  align-items: flex-start;
+}
+
+.cs-challenge__copy {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cs-challenge__copy .cs-body {
+  margin-top: 0;
+}
+
+/* ---------- Process steps ---------- */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.process-step__phase {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.process-step__title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--text);
+}
+
+.process-step__desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted-strong);
+}
+
+/* ---------- Metrics ---------- */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.metric-card__number {
+  font-family: var(--font-serif);
+  font-size: 64px;
+  line-height: 1;
+  color: var(--text);
+}
+
+.metric-card__number--accent {
+  color: var(--accent);
+}
+
+.metric-card__desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted-strong);
 }
 
 /* ---------- Personas ---------- */

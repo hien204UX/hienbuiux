@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iGaming Design System — Hien Bui</title>
+  <meta name="description" content="Case study: a domain-specific design system, UI component library, and design tokens built to scale an iGaming payments platform to 2.4M daily active users." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/case-study.css" />
+</head>
+<body>
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="../../index.html" class="nav__logo" aria-label="Hien Bui UX — home">
+        <img src="../../assets/icons/logo.svg" alt="Hien Bui UX" width="82" height="39" />
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../../index.html#work">Work</a>
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#skills">Skills</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="mailto:hienbui2041995@gmail.com" class="btn btn--dark nav__cta">Hire me</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../../index.html#work">Work</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#skills">Skills</a>
+    </div>
+  </header>
+
+  <main class="cs">
+    <div class="cs-container">
+
+      <!-- Hero -->
+      <section class="cs-hero">
+        <p class="eyebrow eyebrow--accent">Case Study — 01</p>
+        <h1 class="cs-hero__title">iGaming Design System: Scaling complex transaction <em>flows</em></h1>
+      </section>
+
+      <!-- Cover -->
+      <section class="cs-cover cs-cover--dim">
+        <img src="images/cover.jpg" alt="QUIKBET mobile app screens showing the home feed, live casino, VIP rewards, and account balance" loading="lazy" />
+      </section>
+
+      <!-- Overview meta grid -->
+      <section class="cs-section cs-meta">
+        <div class="cs-meta__grid">
+          <div class="cs-meta__item">
+            <p class="eyebrow">Project</p>
+            <p class="cs-meta__value">Freelancer</p>
+          </div>
+          <div class="cs-meta__item">
+            <p class="eyebrow">Timeline</p>
+            <p class="cs-meta__value">Nearly 1.5 Years (Feb 2025 — Oct 2026)</p>
+          </div>
+          <div class="cs-meta__item">
+            <p class="eyebrow">My Role</p>
+            <p class="cs-meta__value">Lead Product Designer &amp; Component Architect</p>
+          </div>
+          <div class="cs-meta__item">
+            <p class="eyebrow">Core Deliverables</p>
+            <p class="cs-meta__value">Domain-Specific Design System, UI Component Library &amp; Design Tokens</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Challenge -->
+      <section class="cs-section cs-challenge cs-challenge--text-only">
+        <div class="cs-challenge__text">
+          <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">01</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">The Challenge</span></p>
+          <h2 class="cs-heading">Aligning operational speed with design consistency.</h2>
+        </div>
+        <div class="cs-challenge__copy">
+          <p class="cs-body cs-body--strong">The iGaming payments platform grew exponentially, leaving engineering and product teams struggling to ship critical KYC, transaction wallets, and digital subscription experiences on time. Design debt had accumulated to a point where every new transaction flow required bespoke, hard-coded UI layouts.</p>
+          <p class="cs-body cs-body--muted">The goal was clear: architect a scalable, token-based design system in Figma and React that could support 2.4 million daily active users while keeping component render states accessible, highly robust, and visually cohesive.</p>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section class="cs-section cs-process">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">02</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">The Process</span></p>
+        <h2 class="cs-heading">Research, Taxonomy, Component Architecture</h2>
+
+        <div class="process-grid">
+          <div class="process-step">
+            <p class="process-step__phase">Phase 01 — Audit</p>
+            <p class="process-step__title">Auditing the userflows</p>
+            <p class="process-step__desc">We conducted a systematic audit of over 140 screens across key player journeys — including registration, deposit, gameplay, withdrawal, and account management — to inventory UI components, interaction patterns, and visual inconsistencies.</p>
+          </div>
+          <div class="process-step">
+            <p class="process-step__phase">Phase 02 — Design Tokens</p>
+            <p class="process-step__title">Single source of truth</p>
+            <p class="process-step__desc">Audit insights were translated into a scalable design system foundation through component taxonomy, component architecture, domain-driven variables, and design tokens. Standardized naming conventions, variants, and interaction patterns reduced duplication while enabling reusable, consistent experiences across multiple products built on the shared library.</p>
+          </div>
+          <div class="process-step">
+            <p class="process-step__phase">Phase 03 — Implementation</p>
+            <p class="process-step__title">Engineer Handoff, Scalability &amp; Adaptability</p>
+            <p class="process-step__desc">Translating our design system into reusable Figma components, variables, and documentation streamlined engineer handoff and reduced implementation ambiguity. The system was built to scale across products and adapt to evolving business requirements, enabling faster development while maintaining consistency and flexibility.</p>
+          </div>
+        </div>
+
+        <img class="cs-showcase__image" src="images/process-flow.jpg" alt="Deposit flow diagram mapping the iGaming payment method selection, card details, and confirmation screens" loading="lazy" />
+      </section>
+
+      <!-- Showcase / Deliverables -->
+      <section class="cs-section cs-showcase">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">03</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">The Deliverables</span></p>
+        <h2 class="cs-heading">Figma UI Component Architecture</h2>
+        <p class="cs-body">Interactive high-fidelity component spec designed to support dynamic dark/light variables and scale robustly across operational interfaces.</p>
+        <img class="cs-showcase__image" src="images/deliverable-mockup.jpg" alt="Figma design library showing light and dark theme component showcases for buttons, inputs, and other UI primitives" loading="lazy" />
+      </section>
+
+      <!-- Impact -->
+      <section class="cs-section cs-impact">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">04</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">The Impact</span></p>
+        <h2 class="cs-heading">System outcomes &amp; metrics</h2>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <p class="metric-card__number metric-card__number--accent">-45%</p>
+            <p class="eyebrow">Design-to-development time</p>
+            <p class="metric-card__desc">Reusable components and standardized design tokens significantly reduced implementation time, enabling engineers to ship new features faster with fewer UI inconsistencies.</p>
+          </div>
+          <div class="metric-card">
+            <p class="metric-card__number">100%</p>
+            <p class="eyebrow">Token-based components</p>
+            <p class="metric-card__desc">All core components were rebuilt using design tokens and reusable variants, improving scalability, adaptability, and engineering handoff.</p>
+          </div>
+          <div class="metric-card">
+            <p class="metric-card__number">140+</p>
+            <p class="eyebrow">Screens standardized</p>
+            <p class="metric-card__desc">Over 140 product screens were unified under a shared design language, reducing design debt and creating a consistent player experience across key journeys.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Next project -->
+      <section class="cs-next">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">Up Next</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">HMI Automotive Project</span></p>
+        <h2 class="cs-next__title">HMI Automotive UXUI Concept — EV Driving Mode</h2>
+        <a href="../hmi-automotive-project/index.html" class="link-underline">
+          Read next case study
+          <img src="icons/arrow-next.svg" alt="" width="14" height="14" />
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="contact__grid">
+        <div class="contact__main">
+          <p class="eyebrow eyebrow--accent">Get in touch</p>
+          <h2>Available for select projects from 2025.</h2>
+          <p class="contact__paragraph">I take on a small number of design engagements each year — embedded work with product teams, design system builds, and early-stage product definition. If the work sounds interesting, let's talk.</p>
+        </div>
+
+        <div class="contact__elsewhere">
+          <a href="mailto:hienbui2041995@gmail.com" class="btn btn--dark contact__email">
+            hienbui2041995@gmail.com
+            <img src="../../assets/icons/arrow-email.svg" alt="" width="12" height="12" />
+          </a>
+
+          <div class="contact__location">
+            <p class="eyebrow">Elsewhere</p>
+            <ul class="elsewhere-list">
+              <li><a href="https://linkedin.com/in/zoebui95" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>/in/zoebui95</span></a></li>
+              <li><a href="https://hienbuiux.com" target="_blank" rel="noopener noreferrer"><span>Website</span><span>@hienbuiux</span></a></li>
+            </ul>
+          </div>
+
+          <div class="contact__location">
+            <p class="eyebrow">Open for Location</p>
+            <ul class="elsewhere-list">
+              <li class="contact__location-row">Bangkok | UAE | Kuala Lumpur | Da Nang</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <a href="../../index.html" class="nav__logo" aria-label="Hien Bui UX — home">
+          <img src="../../assets/icons/logo.svg" alt="Hien Bui UX" width="82" height="39" />
+        </a>
+        <p class="eyebrow">© 2025 — UAE</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>
