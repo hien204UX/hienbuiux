@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HMI Automotive UXUI Concept — Hien Bui</title>
+  <meta name="description" content="Case study: an EV energy and driving mode dashboard concept for in-vehicle infotainment systems, inspired by the BYD Sealion 6." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css" />
+  <link rel="stylesheet" href="../../css/case-study.css" />
+</head>
+<body>
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a href="../../index.html" class="nav__logo" aria-label="Hien Bui UX — home">
+        <img src="../../assets/icons/logo.svg" alt="Hien Bui UX" width="82" height="39" />
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="../../index.html#work">Work</a>
+        <a href="../../index.html#about">About</a>
+        <a href="../../index.html#skills">Skills</a>
+        <a href="../../index.html#contact">Contact</a>
+      </nav>
+
+      <div class="nav__actions">
+        <a href="mailto:hienbui2041995@gmail.com" class="btn btn--dark nav__cta">Hire me</a>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../../index.html#work">Work</a>
+      <a href="../../index.html#about">About</a>
+      <a href="../../index.html#skills">Skills</a>
+    </div>
+  </header>
+
+  <main class="cs">
+    <div class="cs-container">
+
+      <!-- Hero -->
+      <section class="cs-hero">
+        <p class="eyebrow eyebrow--accent">Case Study — 01</p>
+        <h1 class="cs-hero__title">HMI Automotive UXUI Concept — EV Driving Mode</h1>
+      </section>
+
+      <!-- Cover -->
+      <section class="cs-cover">
+        <img src="images/cover.jpg" alt="In-vehicle infotainment dashboard showing the driving mode screen, viewed from the driver's seat" loading="lazy" />
+      </section>
+
+      <!-- Overview meta grid -->
+      <section class="cs-section cs-meta">
+        <div class="cs-meta__grid">
+          <div class="cs-meta__item">
+            <p class="eyebrow">Type of project</p>
+            <p class="cs-meta__value">Personal | ft. UXCEL Academy Project</p>
+          </div>
+          <div class="cs-meta__item">
+            <p class="eyebrow">Timeline</p>
+            <p class="cs-meta__value">1.5 Months (May 2026 — June 2026)</p>
+          </div>
+          <div class="cs-meta__item">
+            <p class="eyebrow">My Team</p>
+            <p class="cs-meta__value">Me ft. Nguyen Duc Dung</p>
+          </div>
+          <div class="cs-meta__item">
+            <p class="eyebrow">Core Deliverables</p>
+            <p class="cs-meta__value">Design an energy and driving mode dashboard for electric vehicles, IVI-only</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Challenge / Overview -->
+      <section class="cs-section cs-challenge">
+        <div class="cs-challenge__text">
+          <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">01</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">Introduction</span></p>
+          <h2 class="cs-heading">Overview</h2>
+          <p class="cs-body">EV Energy &amp; Driving Mode Dashboard is a UXUI Concept design for In-Vehicle Infotainment systems on electric vehicles. This design is inspired by the car BYD SEALION 6.</p>
+        </div>
+        <div class="cs-challenge__media">
+          <img src="images/challenge-car.jpg" alt="BYD Sealion 6 exterior, the reference vehicle for this concept" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Process / Personas -->
+      <section class="cs-section cs-process">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">02</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">User research</span></p>
+        <h2 class="cs-heading">EV HMI Driving Mode Personas</h2>
+        <p class="cs-body cs-body--wide">Understanding distinct user expectations across Efficiency, Comfort, and Performance cohorts to design intuitive, customizable electric vehicle infotainment systems.</p>
+
+        <div class="persona-grid">
+          <article class="persona-card">
+            <div class="persona-card__header">
+              <img class="persona-card__portrait" src="images/persona-minh.jpg" alt="Portrait of Minh" loading="lazy" />
+              <div>
+                <p class="persona-card__name">Minh - The Range Optimizer</p>
+                <p class="persona-card__role">Researcher &amp; Sustainability Advocate</p>
+                <div class="persona-card__tags">
+                  <span class="persona-tag">AGE 34</span>
+                  <span class="persona-tag persona-tag--eco">ECO MODE</span>
+                </div>
+              </div>
+            </div>
+            <hr class="persona-card__rule" />
+            <div class="persona-card__block">
+              <p class="eyebrow">Vehicle</p>
+              <p class="persona-card__text">VF5</p>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow">Behavioral Bio</p>
+              <p class="persona-card__text">Minh treats range maximization like a puzzle to solve. She analyzes her daily energy consumption stats to shave off watt-hours, relying heavily on regenerative braking feedback and real-time battery health diagnostics.</p>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow eyebrow--accent">Goals</p>
+              <ul class="persona-list persona-list--goal">
+                <li>Maximize real-world vehicle range</li>
+                <li>Monitor long-term battery degradation</li>
+                <li>Automate smart off-peak charging schedules</li>
+              </ul>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow">Frustrations</p>
+              <ul class="persona-list persona-list--frustration">
+                <li>Unpredictable Range Estimate (GOM)</li>
+                <li>Lack of granular historic consumption data</li>
+                <li>Unclear power-draw feedback from climate control</li>
+                <li>Eco mode reduces the air conditioner's power, causing discomfort in hot weather without any clear notification.</li>
+              </ul>
+            </div>
+            <hr class="persona-card__rule" />
+            <div class="persona-card__block">
+              <p class="eyebrow">Key HMI Metrics Required</p>
+              <div class="persona-card__tags">
+                <span class="metric-tag">SOC % &amp; kWh</span>
+                <span class="metric-tag">Regen Braking Efficiency</span>
+                <span class="metric-tag">Consumption Trend (Wh/km)</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-card__header">
+              <img class="persona-card__portrait" src="images/persona-marcus.jpg" alt="Portrait of Marcus" loading="lazy" />
+              <div>
+                <p class="persona-card__name">Marcus - Practical &amp; Simple</p>
+                <p class="persona-card__role">Product Manager &amp; Family Man</p>
+                <div class="persona-card__tags">
+                  <span class="persona-tag">AGE 41</span>
+                  <span class="persona-tag persona-tag--normal">NORMAL MODE</span>
+                </div>
+              </div>
+            </div>
+            <hr class="persona-card__rule" />
+            <div class="persona-card__block">
+              <p class="eyebrow">Vehicle</p>
+              <p class="persona-card__text">Tesla Model Y</p>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow">Behavioral Bio</p>
+              <p class="persona-card__text">Marcus wants his EV to blend seamlessly into his family routine. He values a balanced, predictable driving feel, instant access to map/audio controls, and clear, non-intrusive safety notifications that keep his family safe.</p>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow eyebrow--accent">Goals</p>
+              <ul class="persona-list persona-list--goal">
+                <li>Dependable, fuss-free daily commuting range</li>
+                <li>Quick access to climate, navigation &amp; audio</li>
+                <li>Clear, high-priority safety &amp; ADAS alerts</li>
+              </ul>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow">Frustrations</p>
+              <ul class="persona-list persona-list--frustration">
+                <li>Information overload with complex menus</li>
+                <li>Too many taps required for common adjustments</li>
+                <li>Laggy or non-responsive touchscreen buttons</li>
+              </ul>
+            </div>
+            <hr class="persona-card__rule" />
+            <div class="persona-card__block">
+              <p class="eyebrow">Key HMI Metrics Required</p>
+              <div class="persona-card__tags">
+                <span class="metric-tag">Distance to Empty</span>
+                <span class="metric-tag">HVAC Status &amp; Audio Info</span>
+                <span class="metric-tag">Active Safety Alerts</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="persona-card">
+            <div class="persona-card__header">
+              <img class="persona-card__portrait" src="images/persona-mina.jpg" alt="Portrait of Mina" loading="lazy" />
+              <div>
+                <p class="persona-card__name">Mina - Outdoor Adventurer</p>
+                <p class="persona-card__role">Engineer &amp; Track Driver</p>
+                <div class="persona-card__tags">
+                  <span class="persona-tag">AGE 28</span>
+                  <span class="persona-tag persona-tag--sport">SPORT MODE</span>
+                </div>
+              </div>
+            </div>
+            <hr class="persona-card__rule" />
+            <div class="persona-card__block">
+              <p class="eyebrow">Vehicle</p>
+              <p class="persona-card__text">Porsche Macan Electric</p>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow">Behavioral Bio</p>
+              <p class="persona-card__text">Mina expects her EV to be a precision instrument. She seeks dynamic telemetry, immediate throttle feedback, and high-fidelity power output visualizations. To her, a dashboard is a performance tuning command center.</p>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow eyebrow--accent">Goals</p>
+              <ul class="persona-list persona-list--goal">
+                <li>Monitor real-time torque &amp; thermal load</li>
+                <li>Record and analyze track lap performance</li>
+                <li>Customize power distribution and suspension stiffness</li>
+              </ul>
+            </div>
+            <div class="persona-card__block">
+              <p class="eyebrow">Frustrations</p>
+              <ul class="persona-list persona-list--frustration">
+                <li>Laggy, low-refresh instrumentation</li>
+                <li>Overly-filtered, sterile driving feel on dashboard</li>
+                <li>Inability to disable aggressive stability aids</li>
+              </ul>
+            </div>
+            <hr class="persona-card__rule" />
+            <div class="persona-card__block">
+              <p class="eyebrow">Key HMI Metrics Required</p>
+              <div class="persona-card__tags">
+                <span class="metric-tag">Instant kW Output &amp; G-Force</span>
+                <span class="metric-tag">Motor &amp; Battery Thermals</span>
+                <span class="metric-tag">Lap Timer &amp; Tire Pressure</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Showcase / IA -->
+      <section class="cs-section cs-showcase">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">03</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">Information architecture</span></p>
+        <h2 class="cs-heading">Instrument Cluster &amp; Center Display</h2>
+        <p class="cs-body"><strong>Cluster Goal:</strong> Immediate driving information with minimal distraction.</p>
+        <p class="cs-body"><strong>Center Display Goal:</strong> Configuration, customization, and detailed explanations.</p>
+        <img class="cs-showcase__image" src="images/ia-diagram.jpg" alt="Information architecture diagram mapping the instrument cluster and center display structure" loading="lazy" />
+      </section>
+
+      <!-- Task Flow -->
+      <section class="cs-section cs-taskflow">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">04</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">Task flow</span></p>
+
+        <div class="flow">
+          <h3 class="flow__title">Full flow</h3>
+          <div class="flow__row">
+            <div class="flow__box">Start</div>
+            <span class="flow__arrow"></span>
+            <div class="flow__decision"><span>Choose method</span></div>
+            <div class="flow__branch">
+              <div class="flow__box flow__box--sm">Physical Button</div>
+              <div class="flow__box flow__box--sm">Tap setting icon</div>
+            </div>
+            <span class="flow__arrow"></span>
+            <div class="flow__box">Driving mode</div>
+            <span class="flow__arrow"></span>
+            <div class="flow__box">Select Eco/Sport/Normal</div>
+            <span class="flow__arrow"></span>
+            <div class="flow__box">Home</div>
+          </div>
+        </div>
+
+        <div class="flow">
+          <h3 class="flow__title">Re-selecting flow (Ex: Eco - Sport)</h3>
+          <div class="flow__row">
+            <div class="flow__box">Eco</div>
+            <span class="flow__arrow"></span>
+            <div class="flow__decision"><span>Choose method</span></div>
+            <div class="flow__branch">
+              <div class="flow__box flow__box--sm">Physical Button</div>
+              <div class="flow__box flow__box--sm">Tap setting icon</div>
+            </div>
+            <span class="flow__arrow"></span>
+            <div class="flow__box">Driving mode</div>
+            <span class="flow__arrow"></span>
+            <div class="flow__box">Select Eco/Sport/Normal</div>
+            <span class="flow__arrow"></span>
+            <div class="flow__box">Home</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Wireframes -->
+      <section class="cs-section cs-wireframe">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">04</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">Wireframe</span></p>
+
+        <div class="cs-media-block">
+          <h3 class="cs-heading cs-heading--sm">Center display screen</h3>
+          <div class="cs-image-pair">
+            <img src="images/wireframe-center-1.jpg" alt="Center display wireframe — home screen with quick controls" loading="lazy" />
+            <img src="images/wireframe-center-2.jpg" alt="Center display wireframe — settings screen with steering mode and regenerative braking options" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="cs-media-block">
+          <h3 class="cs-heading cs-heading--sm">Cluster instrument screen</h3>
+          <img class="cs-image-centered" src="images/wireframe-cluster.jpg" alt="Instrument cluster wireframe showing speed, battery, and range" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Final UI -->
+      <section class="cs-section cs-final">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">04</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">UI and presentation designed by <strong>Nguyen Duc Dung</strong></span></p>
+
+        <div class="cs-media-block">
+          <h3 class="cs-heading cs-heading--sm">Alert &amp; charge direction</h3>
+          <img class="cs-image-full" src="images/final-alert-charge.jpg" alt="Final UI showing a low battery alert with nearby charging station suggestion" loading="lazy" />
+        </div>
+
+        <div class="cs-media-block">
+          <h3 class="cs-heading cs-heading--sm">Mode setting</h3>
+          <div class="cs-image-trio">
+            <figure>
+              <img src="images/final-mode-sport.jpg" alt="Final UI for Sport mode settings" loading="lazy" />
+              <figcaption>Sport</figcaption>
+            </figure>
+            <figure>
+              <img src="images/final-mode-normal.jpg" alt="Final UI for Normal mode settings" loading="lazy" />
+              <figcaption>Normal</figcaption>
+            </figure>
+          </div>
+          <div class="cs-image-trio cs-image-trio--single">
+            <figure>
+              <img src="images/final-mode-eco.jpg" alt="Final UI for Eco mode settings" loading="lazy" />
+              <figcaption>Eco</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Next project -->
+      <section class="cs-next">
+        <p class="cs-eyebrow-line"><span class="eyebrow eyebrow--accent">Up Next</span><span class="cs-eyebrow-line__rule"></span><span class="eyebrow">HMI Automotive Project</span></p>
+        <h2 class="cs-next__title">J.AI</h2>
+        <a href="../../index.html#work" class="link-underline">
+          Read next case study
+          <img src="icons/arrow-next.svg" alt="" width="14" height="14" />
+        </a>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <div class="contact__grid">
+        <div class="contact__main">
+          <p class="eyebrow eyebrow--accent">Get in touch</p>
+          <h2>Available for select projects from 2025.</h2>
+          <p class="contact__paragraph">I take on a small number of design engagements each year — embedded work with product teams, design system builds, and early-stage product definition. If the work sounds interesting, let's talk.</p>
+          <a href="mailto:hienbui2041995@gmail.com" class="btn btn--dark contact__email">
+            hienbui2041995@gmail.com
+            <img src="../../assets/icons/arrow-email.svg" alt="" width="12" height="12" />
+          </a>
+        </div>
+
+        <div class="contact__elsewhere">
+          <p class="eyebrow">Elsewhere</p>
+          <ul class="elsewhere-list">
+            <li><a href="https://linkedin.com/in/hienbuiux" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span>/in/hienbuiux</span></a></li>
+            <li><a href="https://hienbuiux.com" target="_blank" rel="noopener noreferrer"><span>Website</span><span>@hienbuiux</span></a></li>
+            <li><a href="https://dribbble.com/hienbuiux" target="_blank" rel="noopener noreferrer"><span>Dribbble</span><span>/hienbuiux</span></a></li>
+            <li><a href="https://github.com/hienbuiux" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span>/hienbuiux</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer">
+        <a href="../../index.html" class="nav__logo" aria-label="Hien Bui UX — home">
+          <img src="../../assets/icons/logo.svg" alt="Hien Bui UX" width="82" height="39" />
+        </a>
+        <p class="eyebrow">© 2025 — UAE</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

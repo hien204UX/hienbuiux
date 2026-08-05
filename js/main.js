@@ -35,97 +35,100 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
 }
 
 const gateModal = document.getElementById('gateModal');
-const gateForm = document.getElementById('gateForm');
-const gateEmail = document.getElementById('gateEmail');
-const gateMessage = document.getElementById('gateMessage');
-const gateSubmit = document.getElementById('gateSubmit');
-const gateError = document.getElementById('gateError');
-const WEB3FORMS_ACCESS_KEY = 'f68c6e60-fc02-441f-9dee-0b8ed704c56b';
-const gateDenied = document.querySelector('.gate__denied');
-const gateNote = document.querySelector('.gate__note');
-const gateRequestView = gateModal.querySelector('[data-gate-view="request"]');
-const gateThanksView = gateModal.querySelector('[data-gate-view="thanks"]');
-const gateRadios = gateModal.querySelectorAll('input[name="isRecruiter"]');
-let currentProject = '';
 
-function openGate(project) {
-  currentProject = project || 'this case study';
-  gateForm.reset();
-  gateForm.hidden = false;
-  gateNote.hidden = false;
-  gateDenied.hidden = true;
-  gateError.hidden = true;
-  gateRequestView.hidden = false;
-  gateThanksView.hidden = true;
-  gateModal.classList.add('is-open');
-  gateModal.setAttribute('aria-hidden', 'false');
-}
+if (gateModal) {
+  const gateForm = document.getElementById('gateForm');
+  const gateEmail = document.getElementById('gateEmail');
+  const gateMessage = document.getElementById('gateMessage');
+  const gateSubmit = document.getElementById('gateSubmit');
+  const gateError = document.getElementById('gateError');
+  const WEB3FORMS_ACCESS_KEY = 'f68c6e60-fc02-441f-9dee-0b8ed704c56b';
+  const gateDenied = document.querySelector('.gate__denied');
+  const gateNote = document.querySelector('.gate__note');
+  const gateRequestView = gateModal.querySelector('[data-gate-view="request"]');
+  const gateThanksView = gateModal.querySelector('[data-gate-view="thanks"]');
+  const gateRadios = gateModal.querySelectorAll('input[name="isRecruiter"]');
+  let currentProject = '';
 
-function closeGate() {
-  gateModal.classList.remove('is-open');
-  gateModal.setAttribute('aria-hidden', 'true');
-}
+  const openGate = (project) => {
+    currentProject = project || 'this case study';
+    gateForm.reset();
+    gateForm.hidden = false;
+    gateNote.hidden = false;
+    gateDenied.hidden = true;
+    gateError.hidden = true;
+    gateRequestView.hidden = false;
+    gateThanksView.hidden = true;
+    gateModal.classList.add('is-open');
+    gateModal.setAttribute('aria-hidden', 'false');
+  };
 
-document.querySelectorAll('.case-study-link').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    openGate(link.dataset.project);
-  });
-});
+  const closeGate = () => {
+    gateModal.classList.remove('is-open');
+    gateModal.setAttribute('aria-hidden', 'true');
+  };
 
-gateModal.querySelectorAll('[data-gate-close]').forEach((el) => {
-  el.addEventListener('click', closeGate);
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && gateModal.classList.contains('is-open')) {
-    closeGate();
-  }
-});
-
-gateRadios.forEach((radio) => {
-  radio.addEventListener('change', () => {
-    const isRecruiter = radio.value === 'yes' && radio.checked;
-    gateForm.hidden = !isRecruiter;
-    gateNote.hidden = !isRecruiter;
-    gateDenied.hidden = isRecruiter;
-  });
-});
-
-gateForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-  const email = gateEmail.value.trim();
-  const message = gateMessage.value.trim();
-  if (!email || !message) return;
-
-  gateError.hidden = true;
-  gateSubmit.disabled = true;
-  gateSubmit.textContent = 'Sending…';
-
-  try {
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify({
-        access_key: WEB3FORMS_ACCESS_KEY,
-        subject: `Case study access request: ${currentProject}`,
-        case_study: currentProject,
-        email,
-        message,
-      }),
+  document.querySelectorAll('.case-study-link').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      openGate(link.dataset.project);
     });
-    const result = await response.json();
+  });
 
-    if (!result.success) {
-      throw new Error(result.message || 'Submission failed');
+  gateModal.querySelectorAll('[data-gate-close]').forEach((el) => {
+    el.addEventListener('click', closeGate);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && gateModal.classList.contains('is-open')) {
+      closeGate();
     }
+  });
 
-    gateRequestView.hidden = true;
-    gateThanksView.hidden = false;
-  } catch (err) {
-    gateError.hidden = false;
-  } finally {
-    gateSubmit.disabled = false;
-    gateSubmit.textContent = 'Send email';
-  }
-});
+  gateRadios.forEach((radio) => {
+    radio.addEventListener('change', () => {
+      const isRecruiter = radio.value === 'yes' && radio.checked;
+      gateForm.hidden = !isRecruiter;
+      gateNote.hidden = !isRecruiter;
+      gateDenied.hidden = isRecruiter;
+    });
+  });
+
+  gateForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const email = gateEmail.value.trim();
+    const message = gateMessage.value.trim();
+    if (!email || !message) return;
+
+    gateError.hidden = true;
+    gateSubmit.disabled = true;
+    gateSubmit.textContent = 'Sending…';
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `Case study access request: ${currentProject}`,
+          case_study: currentProject,
+          email,
+          message,
+        }),
+      });
+      const result = await response.json();
+
+      if (!result.success) {
+        throw new Error(result.message || 'Submission failed');
+      }
+
+      gateRequestView.hidden = true;
+      gateThanksView.hidden = false;
+    } catch (err) {
+      gateError.hidden = false;
+    } finally {
+      gateSubmit.disabled = false;
+      gateSubmit.textContent = 'Send email';
+    }
+  });
+}
