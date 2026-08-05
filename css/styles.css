@@ -708,12 +708,24 @@ h2 {
   color: var(--muted);
 }
 
-.contact__email {
-  margin-top: 40px;
+.contact__elsewhere {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.contact__elsewhere > .eyebrow {
+.contact__location > .eyebrow {
   display: block;
+}
+
+.contact__location-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 14.5px;
+  color: var(--text);
 }
 
 .elsewhere-list {
