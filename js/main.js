@@ -70,6 +70,7 @@ if (gateModal) {
 
   document.querySelectorAll('.case-study-link').forEach((link) => {
     link.addEventListener('click', (event) => {
+      if (link.getAttribute('href') !== '#') return;
       event.preventDefault();
       openGate(link.dataset.project);
     });
