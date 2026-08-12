@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="../../css/styles.css" />
   <link rel="stylesheet" href="../../css/case-study.css" />
 </head>
-<body>
+<body class="cs-locked">
   <header class="nav" id="top">
     <div class="nav__inner">
       <a href="../../index.html" class="nav__logo" aria-label="Hien Bui UX — home">
@@ -200,6 +200,56 @@
       </div>
     </div>
   </section>
+
+  <div class="gate" id="gateModal" aria-hidden="true" data-auto-open="true" data-project="iGaming Design System">
+    <div class="gate__backdrop" data-gate-close></div>
+    <div class="gate__card" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+      <div class="gate__view" data-gate-view="request">
+        <div class="gate__header">
+          <h3 id="gateTitle">Are you a recruiter?</h3>
+          <button type="button" class="gate__close" aria-label="Close" data-gate-close>&times;</button>
+        </div>
+
+        <div class="gate__choice" role="radiogroup" aria-label="Are you a recruiter?">
+          <label class="gate__checkbox">
+            <input type="radio" name="isRecruiter" value="yes" checked />
+            <span class="gate__box"></span>
+            Yes
+          </label>
+          <label class="gate__checkbox">
+            <input type="radio" name="isRecruiter" value="no" />
+            <span class="gate__box"></span>
+            No
+          </label>
+        </div>
+
+        <p class="gate__note">This project is protected by a non-disclosure agreement (NDA), so I'm unable to showcase it publicly. Please contact me for more details.</p>
+
+        <form class="gate__form" id="gateForm">
+          <label class="gate__label" for="gateEmail">Input your email <span class="gate__required">*</span></label>
+          <input class="gate__input" type="email" id="gateEmail" name="email" placeholder="***@***.com" required />
+
+          <label class="gate__label" for="gateMessage">Your message <span class="gate__required">*</span></label>
+          <textarea class="gate__input gate__textarea" id="gateMessage" name="message" rows="4" required></textarea>
+
+          <input type="checkbox" name="botcheck" class="gate__honeypot" tabindex="-1" autocomplete="off" />
+
+          <button type="submit" class="btn btn--dark gate__submit" id="gateSubmit">Send email</button>
+          <p class="gate__error" id="gateError" hidden>Something went wrong sending your request — please try again, or email me directly at hienbui2041995@gmail.com.</p>
+        </form>
+
+        <p class="gate__denied" hidden>This case study is available to recruiters only.</p>
+      </div>
+
+      <div class="gate__view" data-gate-view="thanks" hidden>
+        <div class="gate__header">
+          <h3>Thank you!</h3>
+          <button type="button" class="gate__close" aria-label="Close" data-gate-close>&times;</button>
+        </div>
+        <p>I've received your request. If you're eligible to view this case study, I'll reach out with the details soon.</p>
+      </div>
+    </div>
+  </div>
 
   <script src="../../js/main.js"></script>
 </body>

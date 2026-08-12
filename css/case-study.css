@@ -1,3 +1,9 @@
+/* ---------- Recruiter-locked page ---------- */
+body.cs-locked main.cs,
+body.cs-locked .contact {
+  display: none;
+}
+
 /* ---------- Case study layout ---------- */
 .cs-container {
   max-width: var(--container);
@@ -106,6 +112,10 @@
   background: rgba(0, 0, 0, 0.2);
   border-radius: 8px;
   pointer-events: none;
+}
+
+.cs-cover--contain {
+  padding-bottom: 0;
 }
 
 .cs-cover--contain img {

@@ -63,7 +63,13 @@ if (gateModal) {
     gateModal.setAttribute('aria-hidden', 'false');
   };
 
+  const isLockedPage = gateModal.dataset.autoOpen === 'true';
+
   const closeGate = () => {
+    if (isLockedPage) {
+      window.location.href = '../../index.html';
+      return;
+    }
     gateModal.classList.remove('is-open');
     gateModal.setAttribute('aria-hidden', 'true');
   };
@@ -75,6 +81,10 @@ if (gateModal) {
       openGate(link.dataset.project);
     });
   });
+
+  if (isLockedPage) {
+    openGate(gateModal.dataset.project);
+  }
 
   gateModal.querySelectorAll('[data-gate-close]').forEach((el) => {
     el.addEventListener('click', closeGate);
