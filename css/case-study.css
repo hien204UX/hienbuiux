@@ -108,6 +108,12 @@
   pointer-events: none;
 }
 
+.cs-cover--contain img {
+  object-fit: contain;
+  border-radius: 0;
+  aspect-ratio: 1191 / 765;
+}
+
 /* ---------- Overview meta ---------- */
 .cs-meta__grid {
   display: grid;
