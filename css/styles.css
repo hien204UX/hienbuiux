@@ -335,10 +335,15 @@ h2 {
 }
 
 .hero__top {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 326px;
   gap: 48px;
-  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .hero__top {
+    grid-template-columns: 1fr;
+  }
 }
 
 .hero__intro {
