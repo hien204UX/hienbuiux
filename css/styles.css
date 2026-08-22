@@ -357,7 +357,7 @@ h2 {
 .hero__heading {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(40px, 7vw, 96px);
+  font-size: clamp(32px, 5.6vw, 76.8px);
   line-height: 1.05;
   letter-spacing: -0.02em;
   color: var(--text);
