@@ -342,7 +342,7 @@ h2 {
 }
 
 .hero__intro {
-  max-width: 700px;
+  max-width: 820px;
 }
 
 .hero__intro .eyebrow {
@@ -362,6 +362,10 @@ h2 {
 
 .hero__heading em {
   font-style: italic;
+  color: var(--accent);
+}
+
+.hero__heading-accent {
   color: var(--accent);
 }
 
