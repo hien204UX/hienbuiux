@@ -981,3 +981,88 @@ h2 {
   line-height: 1.65;
   color: var(--muted);
 }
+
+/* ---------- Site-wide password gate ---------- */
+html.gate-locked body {
+  overflow: hidden;
+}
+
+html:not(.gate-locked) .site-gate {
+  display: none;
+}
+
+.site-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+}
+
+.site-gate__card {
+  background: var(--bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  width: 100%;
+  max-width: 487px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.site-gate__title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 36px);
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.site-gate__body {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text);
+  font-weight: 300;
+}
+
+.site-gate__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-gate__label {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--muted-strong);
+}
+
+.site-gate__input {
+  background: #e4e2df;
+  border: 1px solid #d4cfc9;
+  border-radius: 2px;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-family: var(--font-sans);
+  color: var(--text);
+}
+
+.site-gate__input::placeholder {
+  color: #8e8e8e;
+}
+
+.site-gate__submit {
+  width: 100%;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.site-gate__view[hidden] {
+  display: none;
+}

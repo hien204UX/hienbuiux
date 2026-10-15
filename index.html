@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="gate-locked">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,39 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <div class="site-gate" id="siteGate">
+    <div class="site-gate__card" role="dialog" aria-modal="true" aria-labelledby="siteGateTitle">
+      <div class="site-gate__view" data-gate-view="request">
+        <h2 id="siteGateTitle" class="site-gate__title">Please enter password</h2>
+        <p class="site-gate__body">This project is protected by a non-disclosure agreement (NDA), so I&rsquo;m unable to showcase it publicly.</p>
+        <form class="site-gate__form" id="siteGateForm">
+          <label class="site-gate__label" for="siteGatePassword">Access Password</label>
+          <input class="site-gate__input" type="password" id="siteGatePassword" name="password" placeholder="example: ABC123" autocomplete="off" autofocus required />
+          <button type="submit" class="btn btn--dark site-gate__submit">Submit</button>
+        </form>
+      </div>
+      <div class="site-gate__view" data-gate-view="success" hidden>
+        <h2 class="site-gate__title">Access Granted</h2>
+        <p class="site-gate__body">Password verified successfully. You can now access the portfolio case studies.</p>
+        <button type="button" class="btn btn--dark site-gate__submit" data-gate-continue>Continue to Portfolio</button>
+      </div>
+      <div class="site-gate__view" data-gate-view="error" hidden>
+        <h2 class="site-gate__title">Incorrect Password</h2>
+        <p class="site-gate__body">The password you entered is incorrect. Please try again.</p>
+        <button type="button" class="btn btn--dark site-gate__submit" data-gate-retry>Try Again</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('hbux-site-unlocked') === 'true') {
+          document.documentElement.classList.remove('gate-locked');
+        }
+      } catch (err) {}
+    })();
+  </script>
+
   <header class="nav" id="top">
     <div class="nav__inner">
       <a href="#top" class="nav__logo" aria-label="Hien Bui UX — home">

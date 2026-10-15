@@ -1,3 +1,40 @@
+const siteGate = document.getElementById('siteGate');
+
+if (siteGate) {
+  const SITE_GATE_PASSWORD = 'BBPP25';
+  const SITE_GATE_STORAGE_KEY = 'hbux-site-unlocked';
+
+  const gateForm = document.getElementById('siteGateForm');
+  const gatePasswordInput = document.getElementById('siteGatePassword');
+  const gateRequestView = siteGate.querySelector('[data-gate-view="request"]');
+  const gateSuccessView = siteGate.querySelector('[data-gate-view="success"]');
+  const gateErrorView = siteGate.querySelector('[data-gate-view="error"]');
+
+  gateForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const isCorrect = gatePasswordInput.value === SITE_GATE_PASSWORD;
+    gateRequestView.hidden = true;
+    gateSuccessView.hidden = !isCorrect;
+    gateErrorView.hidden = isCorrect;
+  });
+
+  siteGate.querySelector('[data-gate-continue]').addEventListener('click', () => {
+    try {
+      localStorage.setItem(SITE_GATE_STORAGE_KEY, 'true');
+    } catch (err) {
+      /* localStorage unavailable — gate stays unlocked for this view only */
+    }
+    document.documentElement.classList.remove('gate-locked');
+  });
+
+  siteGate.querySelector('[data-gate-retry]').addEventListener('click', () => {
+    gateErrorView.hidden = true;
+    gateRequestView.hidden = false;
+    gatePasswordInput.value = '';
+    gatePasswordInput.focus();
+  });
+}
+
 const navToggle = document.getElementById('navToggle');
 const mobileMenu = document.getElementById('mobileMenu');
 
