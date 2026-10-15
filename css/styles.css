@@ -1017,7 +1017,7 @@ html:not(.gate-locked) .site-gate {
   max-width: 487px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .site-gate__title {
@@ -1039,7 +1039,6 @@ html:not(.gate-locked) .site-gate {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 8px;
 }
 
 .site-gate__label {
