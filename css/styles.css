@@ -629,10 +629,16 @@ h2 {
   color: var(--muted);
 }
 
-.about__experience .link-underline {
+.about__experience .cv-downloads {
   margin-top: 26px;
   padding-top: 24px;
   border-top: 1px solid var(--border-on-dark);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+}
+
+.about__experience .link-underline {
   border-bottom: none;
 }
 
