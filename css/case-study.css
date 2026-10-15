@@ -912,6 +912,15 @@ body.cs-locked .contact {
   margin-top: 8px;
 }
 
+.process-grid--4col .process-step__title {
+  font-size: 20px;
+}
+
+.process-grid--4col .process-step__desc {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
 /* ---------- Gallery (image showcase) ---------- */
 .cs-gallery {
   display: flex;
