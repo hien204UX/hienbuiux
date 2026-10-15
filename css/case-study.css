@@ -843,6 +843,157 @@ body.cs-locked .contact {
   color: var(--text);
 }
 
+/* ---------- Overview columns (3-up text) ---------- */
+.cs-columns-3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 24px;
+}
+
+.cs-columns-3 p {
+  flex: 1 1 260px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted-strong);
+  font-weight: 300;
+}
+
+/* ---------- Challenge list ---------- */
+.cs-challenge__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.cs-challenge__list li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--muted-strong);
+}
+
+.cs-challenge__list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.cs-challenge__list li strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* ---------- Process grid variants ---------- */
+.process-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.process-grid--4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .process-grid--4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .process-grid--4col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-step__desc + .process-step__desc {
+  margin-top: 8px;
+}
+
+/* ---------- Gallery (image showcase) ---------- */
+.cs-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin-top: 48px;
+  width: 100%;
+}
+
+.cs-gallery__item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.cs-gallery__item-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--text);
+}
+
+.cs-gallery__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.cs-gallery__image--shadow {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cs-gallery__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cs-gallery__col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cs-gallery__split {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.cs-gallery__split-main {
+  grid-row: span 2;
+}
+
+.cs-gallery__split-main img,
+.cs-gallery__split img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.cs-gallery__narrow {
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .cs-gallery__row,
+  .cs-gallery__split {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .cs-gallery__split-main {
+    grid-row: auto;
+  }
+}
+
 /* ---------- Comments ---------- */
 .comments-grid {
   display: grid;
